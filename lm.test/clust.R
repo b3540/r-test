@@ -1,5 +1,5 @@
 #ファイルの読み込み
-dat <- read.table("clipboard",header=T,row.names=1)
+dat <- read.csv("clust.csv",header=T,row.names=1)
 
 #分析用データフレームに対する正規化の実施
 data.scale <- scale(dat)　#正規化：各変量を平均が0、分散が1となるよう変換

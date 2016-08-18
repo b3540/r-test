@@ -1,5 +1,5 @@
 #  ファイルの読み込み
-dat <- read.table("clipboard",header=TRUE)
+dat <- read.csv("lm.csv",header=TRUE)
 
 #　pairs(散布図行列) で各列同士の組合せ全てについて散布図を描く
 pairs(dat)
