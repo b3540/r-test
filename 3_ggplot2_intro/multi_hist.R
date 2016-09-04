@@ -1,3 +1,4 @@
+install.packages("ggplot2")
 library(ggplot2)
 library(plyr) # revalue()関数の読み込み
 
@@ -19,3 +20,11 @@ data$division <- revalue(data$division, c("0"="Wholesale", "1"="retail"))
 # 複数のヒストグラムを重ねて描画する
 ggplot(data, aes(x = office, fill = division)) +
   geom_histogram(binwidth = 150, position = "identity", alpha = 0.4)
+
+# 余録：デザインテーマの変更
+install.packages("ggthemes")
+require(ggthemes)
+g
+g + theme_wsj()
+g + theme_tufte()
+g + theme_economist()
