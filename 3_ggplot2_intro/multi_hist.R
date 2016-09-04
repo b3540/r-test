@@ -1,9 +1,13 @@
 install.packages("ggplot2")
+install.packages("plyr")
 library(ggplot2)
-library(plyr) # revalue()関数の読み込み
+library(plyr) # load revalue()
 
 data <- read.csv(file("r-test/3_ggplot2_intro/office.csv",encoding='Shift_JIS'))
 data
+
+ggplot(data, aes(x = office)) +
+  geom_histogram()
 
 # 複数のヒストグラムを別々に描画する
 ggplot(data, aes(x = office)) +
@@ -24,7 +28,11 @@ ggplot(data, aes(x = office, fill = division)) +
 # 余録：デザインテーマの変更
 install.packages("ggthemes")
 require(ggthemes)
+g <- ggplot(data, aes(x = office, fill = division)) +
+  geom_histogram(binwidth = 150, position = "identity", alpha = 0.4)
 g
 g + theme_wsj()
 g + theme_tufte()
 g + theme_economist()
+g + theme_excel()
+g + theme_solarized_2()
